@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+#kind: ReplicaSet
+kind: Deployment
+metadata:
+        name: replicasetteste
+spec:
+        replicas: 4 #Quantidade de copias
+        selector: #Gerencia de pods
+                matchLabels:
+                        app: nginx
+        template:
+                metadata: #Nmae é gerado em aleatorio
+                        labels:
+                                app: nginx #Aqui amarra o label com selector
+                spec:
+                        containers:
+                                - name: site
+                                  image: kubedevio/nginx-color:green
+                                  ports:
+                                  - containerPort: 80
+                                        
+                               

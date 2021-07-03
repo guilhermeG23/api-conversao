@@ -62,3 +62,19 @@ Faça o upload para o Hub, Ex:
 ```
 docker push <imagem>
 ```
+
+____
+
+#### Aula 2
+
+Feito o deploy em K3D
+```
+k3d create cluster node --servers 1 --agents 2 "8080:30000@loadbalancer"
+
+kubectl apply -f k3d/
+```
+
+Hub.Docker
+* https://hub.docker.com/repository/docker/guilhermebrechot/node_api-produto
+
+

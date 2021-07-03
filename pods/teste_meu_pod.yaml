@@ -1,0 +1,12 @@
+apiVersion: v1 #Valor do kubectl api-resources
+kind: Pod #Tipo de aplicacao
+#Informacoes do pod
+metadata:
+        name: nomedopod
+spec: #Especificando as informacoes do obj
+        #Container do pod
+        containers:
+                - name: site #Nome do container
+                  image: kubedevio/nginx-color:blue #Imagem do container
+                  ports: #Portas a serem utilizadas pelo container
+                        - containerPort: 80

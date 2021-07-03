@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: swagger-deploy
+spec:
+        replicas: 3
+        selector:
+                matchLabels:
+                        app: swagger
+        template:
+                metadata:
+                        labels:
+                                app: swagger
+                spec:
+                        containers:
+                                - name: swagger
+                                  image: guilhermebrechot/node_api-produto:latest
+                                  ports:
+                                          - containerPort: 8080
